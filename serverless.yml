@@ -22,4 +22,4 @@ functions:
   world:
     handler: bin/world
     events:
-      - schedule: rate(30 minutes)
+      # - schedule: rate(30 minutes)
