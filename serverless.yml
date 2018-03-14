@@ -1,0 +1,25 @@
+service: aws-go
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: eu-central-1
+
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  hello:
+    handler: bin/hello
+    events:
+      - http:
+         path: /
+         method: get
+
+  world:
+    handler: bin/world
+    events:
+      - schedule: rate(30 minutes)
