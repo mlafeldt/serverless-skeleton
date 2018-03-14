@@ -3,7 +3,7 @@ service: serverless-skeleton
 provider:
   name: aws
   runtime: go1.x
-  region: eu-central-1
+  region: ${env:AWS_REGION}
 
 package:
  exclude:
