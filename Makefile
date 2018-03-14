@@ -3,6 +3,9 @@ ENV = dev
 deploy: build
 	serverless deploy --stage $(ENV) --verbose
 
+deploy-function: $(FUNC)
+	serverless deploy function --function $(FUNC) --stage $(ENV) --verbose
+
 build: hello world
 
 hello world:
