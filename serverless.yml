@@ -1,4 +1,4 @@
-service: aws-go
+service: serverless-skeleton
 
 provider:
   name: aws
