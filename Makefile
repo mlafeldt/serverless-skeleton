@@ -1,4 +1,4 @@
-ENV = dev
+ENV = staging
 
 deploy: build
 	serverless deploy --stage $(ENV) --verbose
@@ -14,16 +14,10 @@ hello world:
 destroy:
 	serverless remove --stage $(ENV) --verbose
 
-dev: ENV=dev
-dev: deploy
+staging: ENV=staging
+staging: deploy
 
-prod: ENV=prod
-prod: deploy
-
-destroy-dev: ENV=dev
-destroy-dev: destroy
-
-destroy-prod: ENV=prod
-destroy-prod: destroy
+production: ENV=production
+production: deploy
 
 .PHONY: hello world

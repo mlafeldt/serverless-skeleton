@@ -3,7 +3,7 @@ service: serverless-skeleton
 provider:
   name: aws
   runtime: go1.x
-  stage: ${opt:stage, 'dev'}
+  stage: ${opt:stage, 'staging'}
   region: ${env:AWS_REGION}
 
 package:
