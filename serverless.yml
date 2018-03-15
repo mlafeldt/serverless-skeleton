@@ -7,10 +7,10 @@ provider:
   region: ${env:AWS_REGION}
 
 package:
- exclude:
-   - ./**
- include:
-   - ./bin/**
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
 
 functions:
   hello:
