@@ -10,7 +10,7 @@ deploy-function: $(FUNC)
 build: $(FUNCS)
 
 $(FUNCS):
-	GOOS=linux go build -ldflags="-s -w" -o bin/$@ $@/main.go
+	GOOS=linux go build -o bin/$@ $@/main.go
 
 destroy:
 	serverless remove --stage $(ENV) --verbose
