@@ -10,7 +10,7 @@ deploy-function: $(FUNC)
 build: $(FUNCS)
 
 $(FUNCS):
-	GOOS=linux GOARCH=amd64 go build -o bin/$@ $@/main.go
+	GOOS=linux GOARCH=amd64 go build -o bin/$@ ./$@
 
 destroy:
 	serverless remove --stage $(ENV) --verbose
