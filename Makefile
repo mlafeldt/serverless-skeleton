@@ -1,4 +1,5 @@
-ENV = staging
+ENV   = staging
+FUNCS = hello world
 
 deploy: build
 	serverless deploy --stage $(ENV) --verbose
@@ -6,9 +7,9 @@ deploy: build
 deploy-function: $(FUNC)
 	serverless deploy function --function $(FUNC) --stage $(ENV) --verbose
 
-build: hello world
+build: $(FUNCS)
 
-hello world:
+$(FUNCS):
 	GOOS=linux go build -ldflags="-s -w" -o bin/$@ $@/main.go
 
 destroy:
@@ -20,4 +21,4 @@ staging: deploy
 production: ENV=production
 production: deploy
 
-.PHONY: hello world
+.PHONY: $(FUNCS)
