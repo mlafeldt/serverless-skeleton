@@ -7,6 +7,12 @@ deploy: build
 deploy-function: $(FUNC)
 	serverless deploy function --function $(FUNC) --stage $(ENV) --verbose
 
+url:
+	@aws cloudformation describe-stacks \
+		--stack-name serverless-skeleton-$(ENV) \
+		--query "Stacks[0].Outputs[?OutputKey == 'ServiceEndpoint'].OutputValue" \
+		--output text
+
 build: $(FUNCS)
 
 $(FUNCS):

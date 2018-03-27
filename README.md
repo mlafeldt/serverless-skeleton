@@ -24,6 +24,12 @@ $ make deploy-function FUNC=hello
 # Deploy a single function from the service to production
 $ make deploy-function FUNC=hello ENV=production
 
+# Print staging endpoint URL
+$ make url
+
+# Print production endpoint URL
+$ make url ENV=production
+
 # Invoke a deployed function in staging
 $ serverless invoke --function hello
 
