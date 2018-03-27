@@ -1,5 +1,7 @@
 # Serverless Skeleton
 
+[![CircleCI](https://circleci.com/gh/mlafeldt/serverless-skeleton.svg?style=svg)](https://circleci.com/gh/mlafeldt/serverless-skeleton)
+
 A skeleton project that shows how to use the [Serverless Framework](https://serverless.com/framework/) with Go.
 
 Also see [this blog post](https://serverless.com/blog/framework-example-golang-lambda-support/) for more information.
