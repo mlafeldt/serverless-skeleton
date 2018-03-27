@@ -7,7 +7,7 @@ staging: deploy
 production: ENV=production
 production: deploy
 
-deploy: build
+deploy: test build
 	serverless deploy --stage $(ENV) --verbose
 
 deploy-function: $(FUNC)
