@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.10
+
+    working_directory: /go/src/github.com/mlafeldt/serverless-skeleton
+
+    steps:
+      - checkout
+      - run: make test
+      - run: make build && ls -lh bin/
