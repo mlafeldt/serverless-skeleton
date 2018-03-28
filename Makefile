@@ -1,6 +1,6 @@
-ENV   = staging
-FUNCS = hello world # add your functions here
-STACK = $(shell awk '/service:/ {print $$2}' serverless.yml)
+ENV     = staging
+FUNCS   = hello world # add your functions here
+SERVICE = $(shell awk '/service:/ {print $$2}' serverless.yml)
 
 staging: ENV=staging
 staging: deploy
@@ -20,7 +20,7 @@ destroy:
 	serverless remove --stage $(ENV) --verbose
 
 url:
-	@aws cloudformation describe-stacks --stack-name $(STACK)-$(ENV) \
+	@aws cloudformation describe-stacks --stack-name $(SERVICE)-$(ENV) \
 		--query "Stacks[0].Outputs[?OutputKey == 'ServiceEndpoint'].OutputValue" \
 		--output text
 
