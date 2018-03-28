@@ -20,27 +20,19 @@ $ make staging
 # Deploy the service to production
 $ make production
 
-# Deploy a single function from the service to staging
+# Build, test, deploy, or invoke a single function from the service (in staging)
+$ make build-hello
+$ make test-hello
 $ make deploy-hello
-
-# Deploy a single function from the service to production
-$ make deploy-hello ENV=production
+$ serverless invoke --function hello
 
 # Print staging endpoint URL
 $ make url
 
-# Print production endpoint URL
-$ make url ENV=production
-
-# Invoke a deployed function in staging
-$ serverless invoke --function hello
-
-# Invoke a deployed function in production
-$ serverless invoke --function hello --stage production
-
 # Remove the service and all AWS resources from staging
 $ make destroy
 
-# Remove the service and all AWS resources from production
-$ make destroy ENV=production
+# To operate in production instead of staging
+$ make ... ENV=production
+$ serverless ... --stage production
 ```
