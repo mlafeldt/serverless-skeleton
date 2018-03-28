@@ -21,10 +21,10 @@ $ make staging
 $ make production
 
 # Deploy a single function from the service to staging
-$ make deploy-function FUNC=hello
+$ make deploy-hello
 
 # Deploy a single function from the service to production
-$ make deploy-function FUNC=hello ENV=production
+$ make deploy-hello ENV=production
 
 # Print staging endpoint URL
 $ make url
