@@ -1,6 +1,6 @@
 ENV     = staging
 FUNCS   = hello world # add your functions here
-SERVICE = $(shell awk '/service:/ {print $$2}' serverless.yml)
+SERVICE = $(shell awk '/^service:/ {print $$2}' serverless.yml)
 
 staging: ENV=staging
 staging: deploy
