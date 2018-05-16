@@ -9,8 +9,8 @@
     "lambda/messages",
     "lambdacontext"
   ]
-  revision = "fafa7e49388b8991caf99308e80655ba91816b72"
-  version = "v1.1.0"
+  revision = "4d30d0ff60440c2d0480a15747c96ee71c3c53d4"
+  version = "v1.2.0"
 
 [solve-meta]
   analyzer-name = "dep"
