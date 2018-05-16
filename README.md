@@ -20,7 +20,8 @@ $ make staging
 # Deploy the service to production
 $ make production
 
-# Build, test, or deploy a single function from the service (in staging)
+# Build, test, or deploy a single function from the service (in staging).
+# Note that the Makefile will auto-discover functions in the source tree.
 $ make build-hello
 $ make test-hello
 $ make deploy-hello
