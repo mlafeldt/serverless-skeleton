@@ -19,6 +19,11 @@ $(deploy_funcs): deploy-%: test-% build-%
 destroy:
 	serverless remove --stage $(ENV) --verbose
 
+logs_funcs = $(FUNCS:%=logs-%)
+
+$(logs_funcs):
+	serverless logs --function $(@:logs-%=%) --stage $(ENV) --tail --no-color
+
 url:
 	@aws cloudformation describe-stacks --stack-name $(SERVICE)-$(ENV) \
 		--query "Stacks[0].Outputs[?OutputKey == 'ServiceEndpoint'].OutputValue" \

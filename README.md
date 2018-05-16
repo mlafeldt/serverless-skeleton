@@ -20,10 +20,15 @@ $ make staging
 # Deploy the service to production
 $ make production
 
-# Build, test, deploy, or invoke a single function from the service (in staging)
+# Build, test, or deploy a single function from the service (in staging)
 $ make build-hello
 $ make test-hello
 $ make deploy-hello
+
+# Show logs of a deployed function
+$ make logs-hello
+
+# Invoke a deployed function
 $ serverless invoke --function hello
 
 # Print staging endpoint URL
